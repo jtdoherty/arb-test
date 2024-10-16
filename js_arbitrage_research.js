@@ -1,3 +1,26 @@
+// Updated function to fetch data from the specific JSON file
+async function fetchArbitrageData() {
+    try {
+        const response = await fetch('filtered_arbitrage_data.json'); // Ensure this path is correct
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Error loading arbitrage data:", error);
+        return []; // Return an empty array in case of error
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const bets = await fetchArbitrageData(); // Fetch the data
+        populateTable(bets); // Populate the table with the fetched data
+    } catch (error) {
+        console.error("Could not load arbitrage data:", error);
+    }
+});
+
 function populateTable(bets) {
     const betBody = document.getElementById('bet-body');
     betBody.innerHTML = ''; // Clear any existing rows
@@ -39,3 +62,17 @@ function calculateROI(outcomes) {
     const payout2 = outcomes[1].payout;
     return ((1 / payout1 + 1 / payout2) * 100 - 100).toFixed(2) + '%';
 }
+
+// Tab switching functionality (if applicable)
+const preGameBtn = document.getElementById('pre-game-btn');
+const liveBtn = document.getElementById('live-btn');
+
+preGameBtn.addEventListener('click', function () {
+    preGameBtn.classList.add('active');
+    liveBtn.classList.remove('active');
+});
+
+liveBtn.addEventListener('click', function () {
+    liveBtn.classList.add('active');
+    preGameBtn.classList.remove('active');
+});
