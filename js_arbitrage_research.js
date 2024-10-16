@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Fetch the data from the JSON file
-  fetch('filtered_arbitrage_data.json')
+  fetch('./filtered_arbitrage_data.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.statusText}`);
