@@ -1,66 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arbitrage Bet Finder</title>
-  <link rel="stylesheet" href="css_arbitrage_research.css">
-</head>
-<body>
-  <div class="container">
-    <h1 class="title">Free Arbitrage Bet Finder Tool</h1>
-    <p class="description">
-      We monitor odds from online sportsbooks to find arbitrage betting opportunities currently available at online sportsbooks including both pre-game and live arbs. Updates every minute.
-    </p>
+// Updated function to fetch data from the specific JSON file
+async function fetchArbitrageData() {
+  try {
+      const response = await fetch('filtered_arbitrage_data.json'); // Ensure this path is correct
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+  } catch (error) {
+      console.error("Error loading arbitrage data:", error);
+      return []; // Return an empty array in case of error
+  }
+}
 
-    <div class="controls">
-      <div class="buttons">
-        <button id="pre-game-btn" class="active">Pre-Game)</button>
-      </div>
-      <div class="dropdowns">
-        <select id="league-select">
-          <option value="All">All</option>
-          <option value="NFL">NFL</option>
-          <option value="NBA">NBA</option>
-          <option value="MLB">MLB</option>
-        </select>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+      const bets = await fetchArbitrageData(); // Fetch the data
+      populateTable(bets); // Populate the table with the fetched data
+  } catch (error) {
+      console.error("Could not load arbitrage data:", error);
+  }
+});
 
-        <select id="state-select">
-          <option value="NY">NY</option>
-          <option value="NJ">NJ</option>
-          <option value="PA">PA</option>
-        </select>
-      </div>
-    </div>
+function populateTable(bets) {
+  const betBody = document.getElementById('bet-body');
+  betBody.innerHTML = ''; // Clear any existing rows
 
-    <table class="bet-table">
-      <thead>
-        <tr>
-          <th>EVENT</th>
-          <th>BET 1</th>
-          <th>BET 2</th>
-          <th>ROI</th>
-        </tr>
-      </thead>
-      <tbody id="bet-body">
-        <!-- Bets will be inserted here by JavaScript -->
-      </tbody>
-    </table>
+  // Check if there are no bets
+  if (bets.length === 0) {
+      betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opporunities found. (Womp Womp) Check back later!</td></tr>'; // Display message
+      return; // Exit the function early
+  }
 
-    <div class="info">
-      <h2>How Our Arbitrage Bet Finder Tool Works</h2>
-      <p>
-        To find arbitrage bets, we monitor lines from online sportsbooks to find arb bets that are currently available. We check the odds every minute, so you can always find arbitrage bets that are currently available.
-      </p>
-      <p>
-        When the odds of two sides of a bet add up to a positive number, we know we've found an arbitrage bet that will guarantee a profit if you bet both sides of it. That's why you see Bet 1 and Bet 2 in the table above. You have to place both bets to guarantee yourself a profit.
-      </p>
-      <p>
-        How much should you bet? Check out our Arbitrage Calculator to figure out exactly what to wager on each side.
-      </p>
-    </div>
-  </div>
+  bets.forEach(bet => {
+      // Ensure outcomes have at least two bets to show
+      if (bet.outcomes.length >= 2) {
+          const row = `
+              <tr>
+                  <td>
+                      ${bet.event_name}<br>
+                      <small>${bet.competition_name}</small><br>
+                      <small>${new Date(bet.start_time).toLocaleString()}</small>
+                  </td>
+                  <td>
+                      ${bet.outcomes[0].type}<br>
+                      <strong>${bet.outcomes[0].payout}</strong><br>
+                      <small>${bet.outcomes[0].source}</small>
+                  </td>
+                  <td>
+                      ${bet.outcomes[1].type}<br>
+                      <strong>${bet.outcomes[1].payout}</strong><br>
+                      <small>${bet.outcomes[1].source}</small>
+                  </td>
+                  <td class="roi">${calculateROI(bet.outcomes)}</td>
+                  {{ edit_1 }} // Add lastFoundAt time display
+              </tr>
+          `;
+          betBody.innerHTML += row; // Append the new row to the table body
+      } else {
+          console.warn("Not enough outcomes for:", bet.event_name); // Log a warning if data is missing
+      }
+  });
+}
 
-  <script src="js_arbitrage_research.js"></script>
-</body>
-</html>
+// Sample ROI calculation function (this can be customized)
+function calculateROI(outcomes) {
+  // Assuming simple ROI calculation based on payouts
+  const payout1 = outcomes[0].payout;
+  const payout2 = outcomes[1].payout;
+  return ((1 / payout1 + 1 / payout2) * 100 - 100).toFixed(2) + '%';
+}
+
+// Tab switching functionality (if applicable)
+const preGameBtn = document.getElementById('pre-game-btn');
+
+preGameBtn.addEventListener('click', function () {
+  preGameBtn.classList.add('active');
+  liveBtn.classList.remove('active');
+});
+
+liveBtn.addEventListener('click', function () {
+  liveBtn.classList.add('active');
+  preGameBtn.classList.remove('active');
+});
