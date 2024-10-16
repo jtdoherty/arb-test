@@ -52,7 +52,10 @@ function populateTable(bets) {
                       <small>${bet.outcomes[1].source}</small>
                   </td>
                   <td class="roi">${calculateROI(bet.outcomes)}</td>
-                  {{ edit_1 }} // Add lastFoundAt time display
+                  <td>
+                      <small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>
+                  </td>
+                  {{ edit_2 }} // Ensure this is within the <tr> tags
               </tr>
           `;
           betBody.innerHTML += row; // Append the new row to the table body
