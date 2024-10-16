@@ -40,6 +40,7 @@ function populateTable(bets) {
                       ${bet.event_name}<br>
                       <small>${bet.competition_name}</small><br>
                       <small>${new Date(bet.start_time).toLocaleString()}</small>
+                      <small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>
                   </td>
                   <td>
                       ${bet.outcomes[0].type}<br>
@@ -52,10 +53,6 @@ function populateTable(bets) {
                       <small>${bet.outcomes[1].source}</small>
                   </td>
                   <td class="roi">${calculateROI(bet.outcomes)}</td>
-                  <td>
-                      <small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>
-                  </td>
-                  {{ edit_2 }} // Ensure this is within the <tr> tags
               </tr>
           `;
           betBody.innerHTML += row; // Append the new row to the table body
