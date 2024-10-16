@@ -8,22 +8,60 @@
 </head>
 <body>
   <div class="container">
-    <h1>Free Arbitrage Bet Finder Tool</h1>
-    <table>
+    <h1 class="title">Free Arbitrage Bet Finder Tool</h1>
+    <p class="description">
+      We monitor odds from online sportsbooks to find arbitrage betting opportunities currently available at online sportsbooks including both pre-game and live arbs. Updates every minute.
+    </p>
+
+    <div class="controls">
+      <div class="buttons">
+        <button id="pre-game-btn" class="active">Pre-Game (1)</button>
+        <button id="live-btn">Live (0)</button>
+      </div>
+      <div class="dropdowns">
+        <select id="league-select">
+          <option value="All">All</option>
+          <option value="NFL">NFL</option>
+          <option value="NBA">NBA</option>
+          <option value="MLB">MLB</option>
+        </select>
+
+        <select id="state-select">
+          <option value="NY">NY</option>
+          <option value="NJ">NJ</option>
+          <option value="PA">PA</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="bet-table">
       <thead>
         <tr>
-          <th>Event</th>
-          <th>Bet 1</th>
-          <th>Bet 2</th>
+          <th>EVENT</th>
+          <th>BET 1</th>
+          <th>BET 2</th>
           <th>ROI</th>
         </tr>
       </thead>
       <tbody id="bet-body">
-        <!-- Dynamic content will be injected here -->
+        <!-- Bets will be inserted here by JavaScript -->
       </tbody>
     </table>
+
+    <div class="info">
+      <h2>How Our Arbitrage Bet Finder Tool Works</h2>
+      <p>
+        To find arbitrage bets, we monitor lines from online sportsbooks to find arb bets that are currently available. We check the odds every minute, so you can always find arbitrage bets that are currently available.
+      </p>
+      <p>
+        When the odds of two sides of a bet add up to a positive number, we know we've found an arbitrage bet that will guarantee a profit if you bet both sides of it. That's why you see Bet 1 and Bet 2 in the table above. You have to place both bets to guarantee yourself a profit.
+      </p>
+      <p>
+        How much should you bet? Check out our Arbitrage Calculator to figure out exactly what to wager on each side.
+      </p>
+    </div>
   </div>
 
-  <script src="js_arbitrage_research.js"></script>
+  <script src="js_arbitrage_research.js" defer></script>
 </body>
 </html>
