@@ -1,46 +1,178 @@
-[
+{
+  "advantages": [
     {
-        "event_name": "Oklahoma State @ BYU",
-        "competition_name": "2024 NCAA Division I Football",
-        "start_time": "2024-10-19T02:15:00.000Z",
-        "sport": "AMERICAN_FOOTBALL",
-        "participants": [
-            "Oklahoma State",
-            "BYU"
-        ],
-        "outcomes": [
+      "key": "Rb73-ykqq-2Qoi",
+      "type": "ARBITRAGE",
+      "lastFoundAt": "2024-10-16T16:36:01.147Z",
+      "createdAt": "2024-10-16T16:32:01.483Z",
+      "market": {
+        "key": "Pofv-ykoa-Vdrl",
+        "type": "POINT_TOTAL",
+        "segment": "HALF_1",
+        "lastFoundAt": "2024-10-16T16:36:00.194Z",
+        "participantKey": null,
+        "participant": null,
+        "event": {
+          "key": "moLm-yknh-MrLo",
+          "name": "Oklahoma State @ BYU",
+          "type": "MATCH",
+          "startTime": "2024-10-19T02:15:00.000Z",
+          "homeParticipantKey": "CvDv-xitw-8sNE",
+          "participants": [
             {
-                "type": "UNDER",
-                "source": "BET_MGM",
-                "payout": 1.91
+              "key": "c73n-xitw-ptsQ",
+              "slug": "oklahoma-state",
+              "name": "Oklahoma State",
+              "shortName": "OKST",
+              "sport": "AMERICAN_FOOTBALL"
             },
             {
-                "type": "OVER",
-                "source": "BOVADA",
-                "payout": 2.1
+              "key": "CvDv-xitw-8sNE",
+              "slug": "byu",
+              "name": "BYU",
+              "shortName": "BYU",
+              "sport": "AMERICAN_FOOTBALL"
             }
-        ]
+          ],
+          "competitionInstance": {
+            "key": "zuK8-yblv-35Gi",
+            "name": "2024 NCAA Division I Football",
+            "competitionKey": "ei8e-xitw-a3B6",
+            "startAt": "2024-08-15T00:00:00.000Z",
+            "endAt": "2025-01-15T00:00:00.000Z",
+            "competition": {
+              "key": "ei8e-xitw-a3B6",
+              "slug": "ncaa-football",
+              "name": "NCAA Football",
+              "shortName": "NCAAF",
+              "sport": "AMERICAN_FOOTBALL",
+              "category": "MENS_COLLEGE"
+            }
+          }
+        },
+        "outcomes": [
+          {
+            "key": "pkuQ-ykpn-Aspk",
+            "modifier": 27.5,
+            "payout": 1.91,
+            "type": "UNDER",
+            "live": false,
+            "readAt": "2024-10-15T13:16:00.025Z",
+            "lastFoundAt": "2024-10-16T16:36:00.029Z",
+            "source": "BET_MGM",
+            "marketKey": "Pofv-ykoa-Vdrl",
+            "participantKey": null,
+            "participant": null
+          },
+          {
+            "key": "cwoO-ykqq-fVRR",
+            "modifier": 27.5,
+            "payout": 2.1,
+            "type": "OVER",
+            "live": false,
+            "readAt": "2024-10-16T16:31:00.264Z",
+            "lastFoundAt": "2024-10-16T16:36:00.295Z",
+            "source": "BOVADA",
+            "marketKey": "Pofv-ykoa-Vdrl",
+            "participantKey": null,
+            "participant": null
+          }
+        ],
+        "marketStatistics": []
+      }
     },
     {
-        "event_name": "Montreal Alouettes @ British Columbia Lions",
-        "competition_name": "2024 Canadian Football League",
-        "start_time": "2024-10-19T23:00:00.000Z",
-        "sport": "AMERICAN_FOOTBALL",
-        "participants": [
-            "Montreal Alouettes",
-            "British Columbia Lions"
-        ],
-        "outcomes": [
+      "key": "fVve-ykqq-C010",
+      "type": "ARBITRAGE",
+      "lastFoundAt": "2024-10-16T16:36:01.147Z",
+      "createdAt": "2024-10-16T16:36:01.530Z",
+      "market": {
+        "key": "p0Ii-ykps-JdN8",
+        "type": "MONEYLINE",
+        "segment": "FULL_MATCH",
+        "lastFoundAt": "2024-10-16T16:36:00.074Z",
+        "participantKey": null,
+        "participant": null,
+        "event": {
+          "key": "PUdP-ykps-rqQ0",
+          "name": "Montreal Alouettes @ British Columbia Lions",
+          "type": "MATCH",
+          "startTime": "2024-10-19T23:00:00.000Z",
+          "homeParticipantKey": "J1zK-whgw-Bfvz",
+          "participants": [
             {
-                "type": "WIN",
-                "source": "BET_PARX",
-                "payout": 2.12
+              "key": "FPk9-whgw-cHhM",
+              "slug": "montreal-alouettes",
+              "name": "Montreal Alouettes",
+              "shortName": "MTL",
+              "sport": "AMERICAN_FOOTBALL"
             },
             {
-                "type": "WIN",
-                "source": "DRAFT_KINGS",
-                "payout": 1.909091
+              "key": "J1zK-whgw-Bfvz",
+              "slug": "british-columbia-lions",
+              "name": "British Columbia Lions",
+              "shortName": "BC",
+              "sport": "AMERICAN_FOOTBALL"
             }
-        ]
+          ],
+          "competitionInstance": {
+            "key": "MTnf-yiov-CXr4",
+            "name": "2024 Canadian Football League",
+            "competitionKey": "3zEK-whgw-GuHv",
+            "startAt": "2024-06-05T00:00:00.000Z",
+            "endAt": "2024-11-30T00:00:00.000Z",
+            "competition": {
+              "key": "3zEK-whgw-GuHv",
+              "slug": "canadian-football-league",
+              "name": "Canadian Football League",
+              "shortName": "CFL",
+              "sport": "AMERICAN_FOOTBALL",
+              "category": "MENS_PROFESSIONAL"
+            }
+          }
+        },
+        "outcomes": [
+          {
+            "key": "Paal-ykqo-sR0X",
+            "modifier": 0,
+            "payout": 2.12,
+            "type": "WIN",
+            "live": false,
+            "readAt": "2024-10-16T14:09:00.119Z",
+            "lastFoundAt": "2024-10-16T16:36:00.116Z",
+            "source": "BET_PARX",
+            "marketKey": "p0Ii-ykps-JdN8",
+            "participantKey": "FPk9-whgw-cHhM",
+            "participant": {
+              "key": "FPk9-whgw-cHhM",
+              "slug": "montreal-alouettes",
+              "name": "Montreal Alouettes",
+              "shortName": "MTL",
+              "sport": "AMERICAN_FOOTBALL"
+            }
+          },
+          {
+            "key": "USxm-ykqq-HUd4",
+            "modifier": 0,
+            "payout": 1.909091,
+            "type": "WIN",
+            "live": false,
+            "readAt": "2024-10-16T16:35:00.236Z",
+            "lastFoundAt": "2024-10-16T16:35:00.236Z",
+            "source": "DRAFT_KINGS",
+            "marketKey": "p0Ii-ykps-JdN8",
+            "participantKey": "J1zK-whgw-Bfvz",
+            "participant": {
+              "key": "J1zK-whgw-Bfvz",
+              "slug": "british-columbia-lions",
+              "name": "British Columbia Lions",
+              "shortName": "BC",
+              "sport": "AMERICAN_FOOTBALL"
+            }
+          }
+        ],
+        "marketStatistics": []
+      }
     }
-]
+  ]
+}
