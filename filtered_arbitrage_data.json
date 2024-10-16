@@ -1,45 +1,23 @@
 [
     {
-        "event_name": "Oklahoma State @ BYU",
-        "competition_name": "2024 NCAA Division I Football",
-        "start_time": "2024-10-19T02:15:00.000Z",
-        "sport": "AMERICAN_FOOTBALL",
+        "event_name": "Milwaukee Bucks @ Philadelphia 76ers",
+        "competition_name": "2024-25 National Basketball Association",
+        "start_time": "2024-10-23T23:30:00.000Z",
+        "sport": "BASKETBALL",
         "participants": [
-            "Oklahoma State",
-            "BYU"
-        ],
-        "outcomes": [
-            {
-                "type": "UNDER",
-                "source": "BET_MGM",
-                "payout": 1.91
-            },
-            {
-                "type": "OVER",
-                "source": "BOVADA",
-                "payout": 2.1
-            }
-        ]
-    },
-    {
-        "event_name": "Montreal Alouettes @ British Columbia Lions",
-        "competition_name": "2024 Canadian Football League",
-        "start_time": "2024-10-19T23:00:00.000Z",
-        "sport": "AMERICAN_FOOTBALL",
-        "participants": [
-            "Montreal Alouettes",
-            "British Columbia Lions"
+            "Milwaukee Bucks",
+            "Philadelphia 76ers"
         ],
         "outcomes": [
             {
                 "type": "WIN",
-                "source": "BET_PARX",
-                "payout": 2.12
+                "source": "FAN_DUEL",
+                "payout": 1.724638
             },
             {
                 "type": "WIN",
                 "source": "DRAFT_KINGS",
-                "payout": 1.909091
+                "payout": 2.4
             }
         ]
     }
