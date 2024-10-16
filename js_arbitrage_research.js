@@ -39,7 +39,7 @@ function populateTable(bets) {
                   <td>
                       ${bet.event_name}<br>
                       <small>${bet.competition_name}</small><br>
-                      <small>${new Date(bet.start_time).toLocaleString()}</small>
+                      <small>${new Date(bet.start_time).toLocaleString()}</small><br>
                       <small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>
                   </td>
                   <td>
