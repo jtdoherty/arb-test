@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Fetch the data from the JSON file
-  fetch('filtered_arbitrage_data.json') // Ensure this path is correct
-    .then(response => response.json())
+  fetch('filtered_arbitrage_data.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    })
     .then(data => {
-      populateTable(data); // This will populate the table with the fetched data
+      console.log("Data fetched successfully:", data); // Debugging: Check if data is fetched
+      populateTable(data);
     })
     .catch(error => {
       console.error('Error loading JSON data:', error);
+      alert('Failed to load data. Please check the console for errors.');
     });
 
   function populateTable(bets) {
@@ -34,11 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
           <td class="roi">${bet.roi}</td>
         </tr>
       `;
-      betBody.innerHTML += row; // Append the new row to the table body
+      betBody.innerHTML += row;
     });
   }
 
-  // Tab switching
+  // Tab switching functionality (for buttons)
   const preGameBtn = document.getElementById('pre-game-btn');
   const liveBtn = document.getElementById('live-btn');
 
