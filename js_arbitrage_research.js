@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Fetch the data from the JSON file
-  fetch('./filtered_arbitrage_data.json') // Ensure this path is correct
+  fetch('filtered_arbitrage_data.json') // Ensure this path is correct
     .then(response => response.json())
     .then(data => {
       populateTable(data); // This will populate the table with the fetched data
