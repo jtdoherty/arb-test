@@ -57,14 +57,11 @@ function populateTable(bets) {
 
 // Sample ROI calculation function
 function calculateROI(outcomes) {
-    // Assuming simple ROI calculation based on payouts and investment
-    const investment = outcomes.reduce((acc, outcome) => acc + outcome.investment, 0);
-    const totalPayout = outcomes.reduce((acc, outcome) => acc + outcome.payout, 0);
-    
-    // ROI formula: (Total Payout - Investment) / Investment * 100
-    const roi = ((totalPayout - investment) / investment) * 100;
-    
-    return roi.toFixed(2) + '%';
+    // Assuming simple ROI calculation based on payouts
+    const payout1 = outcomes[0].payout;
+    const payout2 = outcomes[1].payout;
+    return ((1 / payout1 + 1 / payout2) * 100 - 100).toFixed(2) + '%';
+}
 
 // Tab switching functionality
 const preGameBtn = document.getElementById('pre-game-btn');
