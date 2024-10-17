@@ -13,6 +13,8 @@ async function fetchArbitrageData() {
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
+  preGameBtn.classList.add('active'); // Set Pre-Game as active on page load
+  liveBtn.classList.remove('active'); // Ensure Live Game is not active
   try {
       const bets = await fetchArbitrageData(); // Fetch the data
       populateTable(bets); // Populate the table with the fetched data
@@ -72,6 +74,7 @@ function calculateROI(outcomes) {
 
 // Tab switching functionality (if applicable)
 const preGameBtn = document.getElementById('pre-game-btn');
+const liveBtn = document.getElementById('live-game-btn');
 
 preGameBtn.addEventListener('click', function () {
   preGameBtn.classList.add('active');
