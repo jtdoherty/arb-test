@@ -3,12 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arbitrage Bet Finder</title>
+  <title>Arbitrage Bet Finder Tool</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="css_arbitrage_research.css">
 </head>
 <body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="logo">JTD</a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <img id="menu-icon" src="menu-icon.png" alt="Menu">
+        </button>
+      </div>
+      <div class="navbar-links" id="navbar-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
   <div class="container">
-    <h1 class="title"> Arbitrage Bet Finder Tool</h1>
+    <h1 class="title">Arbitrage Bet Finder Tool</h1>
     <p class="description">
       We continuously monitor odds from online sportsbooks to identify arbitrage betting opportunities, covering both pre-game and live bets.
     </p>
@@ -17,7 +37,6 @@
       <div class="buttons">
         <button id="pre-game-btn" class="active">Pre-Game</button>
         <button id="live-game-btn" class="active">Live</button>
-
       </div>
       <div class="dropdowns">
         <select id="league-select">
@@ -27,7 +46,6 @@
           <option value="MLB">MLB</option>
           <option value="NHL">NHL</option>
         </select>
-
       </div>
     </div>
 
@@ -58,22 +76,26 @@
         <li><strong>Bet 1 and Bet 2:</strong> The sportsbook, line, and odds for each side.</li>
         <li><strong>ROI:</strong> The percentage return on your investment.</li>
       </ul>
+
       <h2>How Arbitrage Betting Works</h2>
       <p>
         Arbitrage betting involves placing bets on both sides of a game at different sportsbooks when there are price discrepancies, ensuring a profit regardless of the outcome. Though profits can be small and opportunities hard to find, using arbitrage betting software simplifies the process.
       </p>
+
       <h2>Examples of Arbitrage Betting</h2>
       <p>
         For instance, if DraftKings offers the Yankees at +110 and the Red Sox at -105, and FanDuel offers the reverse odds, betting $100 on each side guarantees a profit. By betting on both the Yankees and Red Sox at opposite sportsbooks, you lock in a return regardless of the outcome.
       </p>
+
       <h2>How to Find Arbitrage Opportunities</h2>
       <p>
         Identifying favorable pricing requires constant monitoring of multiple sportsbooks. Comparing odds, watching line movements, and taking advantage of promotions or free bets can also reveal arbitrage opportunities.
       </p>
-      
     </div>
   </div>
 
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
   <script src="js_arbitrage_research.js"></script>
 </body>
 </html>
