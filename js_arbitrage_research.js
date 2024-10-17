@@ -60,7 +60,7 @@ function calculateROI(outcomes) {
     // Assuming simple ROI calculation based on payouts
     const payout1 = outcomes[0].payout;
     const payout2 = outcomes[1].payout;
-    return ((1 / payout1 + 1 / payout2) * 100).toFixed(2) + '%'; // Removed the - 100
+    return ((1 / payout1 + 1 / payout2) * 100 - 100).toFixed(2) + '%';
 }
 
 // Tab switching functionality
