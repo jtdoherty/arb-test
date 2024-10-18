@@ -1,21 +1,18 @@
 /* General body styles */
 body {
-  font-family: 'Arial', sans-serif; /* Use a clean, readable font */
-  background-color: #f9f9f9; /* Light background for better contrast */
-  color: #333; /* Dark text for readability */
-  line-height: 1.6; /* Improved line height for better readability */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #2C3E50, #34495E); /* Updated gradient background */
+  color: #fff; /* Changed text color to white for better contrast */
   margin: 0;
-  padding: 20px; /* Add padding to the body */
+  padding: 0;
 }
 
 /* Container and layout */
 .container {
-  max-width: 1200px; /* Limit the width for better readability */
-  margin: auto; /* Center the container */
-  padding: 20px; /* Add padding to the container */
-  background: white; /* White background for the main content */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Title and description */
@@ -40,13 +37,12 @@ body {
 
 /* Buttons */
 .buttons button {
-  background-color: #28a745; /* Green background for buttons */
-  color: white; /* White text */
-  border: none; /* Remove border */
-  padding: 10px 15px; /* Padding for buttons */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition */
+  padding: 0.5rem 1.5rem; /* Increased padding for buttons */
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; /* Added rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s; /* Added transition for hover effect */
 }
 
 button.active {
@@ -84,8 +80,8 @@ button:hover {
 }
 
 .bet-table th {
-  background-color: #007bff; /* Header background color */
-  color: white; /* Header text color */
+  background-color: #4682B4; /* Steel Blue for table header */
+  color: white;
 }
 
 .bet-table tr {
@@ -93,7 +89,7 @@ button:hover {
 }
 
 .bet-table tr:nth-child(even) {
-  background-color: #f2f2f2; /* Light gray for even rows */
+  background-color: #34495E; /* Dark Slate Grey for even rows */
 }
 
 .bet-table tr:hover {
@@ -112,27 +108,16 @@ button:hover {
 
 /* Info section */
 .info {
-  margin-top: 20px; /* Space above the info section */
+  margin-top: 2rem;
   padding: 20px; /* Added padding for better spacing */
   background-color: #1C1C1C; /* Charcoal for info section */
   border-radius: 10px; /* Rounded corners for info section */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
 }
 
-h1, h3, h4 {
-  color: #007bff; /* Consistent color for headings */
-}
-
-h1 {
-  font-size: 2em; /* Larger font size for main title */
-}
-
-h3 {
-  margin-top: 20px; /* Space above h3 */
-}
-
-h4 {
-  margin-top: 15px; /* Space above h4 */
+h2 {
+  font-size: 1.8rem; /* Increased heading size */
+  color: #fff; /* Updated heading color */
 }
 
 p {
@@ -142,19 +127,9 @@ p {
 
 /* Navbar styles */
 .navbar {
-  background-color: #007bff; /* Primary color for the navbar */
-  padding: 10px 20px; /* Padding for the navbar */
-  border-radius: 8px; /* Rounded corners */
-}
-
-.navbar a {
-  color: white; /* White text for links */
-  text-decoration: none; /* Remove underline */
-  margin: 0 15px; /* Spacing between links */
-}
-
-.navbar a:hover {
-  text-decoration: underline; /* Underline on hover */
+  background-color: #34495E; /* Dark Slate Grey for navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 16px 0;
 }
 
 .navbar .container {
