@@ -195,3 +195,7 @@ p {
     display: block;
   }
 }
+
+.centered {
+    text-align: center;
+}
