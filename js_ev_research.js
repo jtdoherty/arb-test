@@ -17,6 +17,9 @@ function populateTable(bets) {
     const betBody = document.getElementById('bet-body');
     betBody.innerHTML = ''; // Clear any existing rows
 
+    // Sort bets by ROI (EV) from highest to lowest
+    bets.sort((a, b) => b.EV - a.EV); // Sort by EV
+
     // Check if there are no bets
     if (bets.length === 0) {
         betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opportunities found. Check back later!</td></tr>'; // Display message
