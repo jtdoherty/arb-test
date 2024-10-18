@@ -41,12 +41,12 @@ function populateTable(bets) {
                         <small>${bet.source}</small>
                     </td>
                     <td>
-                        <strong class="centered">${bet.implied_probability.toFixed(2)}%</strong><br>
+                        <strong class="bet-table">${bet.implied_probability.toFixed(2)}%</strong><br>
                     </td>
                     <td>
-                        <strong class="centered">${bet.outcome_payout}</strong><br>
+                        <strong class="bet-table">${bet.outcome_payout}</strong><br>
                     </td>
-                    <td class="roi centered">EV: ${bet.EV.toFixed(2)}%</td>
+                    <td class="bet-table">EV: ${bet.EV.toFixed(2)}%</td>
                 </tr>
             `;
             betBody.innerHTML += row; // Append the new row to the table body
