@@ -33,17 +33,18 @@ function populateTable(bets) {
                         ${bet.market_name}<br>
                         <small>${bet.competition_instance_name}</small><br>
                         <small>${new Date(bet.event_start_time).toLocaleString()}</small><br>
-                        <small>Last Found At: ${new Date(bet.lastFoundAt).toLocaleString()}</small>
+                        <small>${bet.sport}</small>
                     </td>
                     <td>
                         ${bet.participants[0]}<br>
-                        <strong>${bet.outcome_payout}</strong><br>
-                        <small>${bet.source}</small>
+                        <strong>Type: ${bet.type}</strong><br>
+                        <small>Source: ${bet.source}</small>
                     </td>
                     <td>
-                        ${bet.participant} (Bet on)<br>
                         <strong>Implied Probability: ${bet.implied_probability.toFixed(2)}%</strong><br>
-                        <strong>Potential Profit: ${bet.profit_potential.toFixed(2)}</strong><br>
+                    </td>
+                    <td>
+                        <strong> ${bet.outcome_payout}</strong><br>
                     </td>
                     <td class="roi">EV: ${bet.EV.toFixed(2)}</td>
                 </tr>
