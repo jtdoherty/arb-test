@@ -70,14 +70,13 @@ button:hover {
 /* Bet table styles */
 .bet-table {
   width: 100%;
-  border-collapse: collapse; /* Changed to collapse to remove column lines */
+  border-collapse: collapse; /* Keep this to manage borders */
   margin-bottom: 1.5rem;
 }
 
 .bet-table th, .bet-table td {
-  border: none; /* Removed border for table cells */
-  padding: 12px; /* Increased padding for table cells */
-  border-radius: 8px; /* Added rounded corners */
+  border: none; /* Remove column borders */
+  padding: 12px; /* Padding for table cells */
 }
 
 .bet-table th {
@@ -86,7 +85,7 @@ button:hover {
 }
 
 .bet-table tr {
-  transition: background-color 0.3s; /* Added transition for row hover */
+  border-bottom: 1px solid #ccc; /* Add a bottom border for each row */
 }
 
 .bet-table tr:nth-child(even) {
