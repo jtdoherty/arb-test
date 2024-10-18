@@ -77,7 +77,7 @@ function calculateROI(outcome_payout) {
 
 // Tab switching functionality (unchanged)
 const preGameBtn = document.getElementById('pre-game-btn');
-const liveBtn = document.getElementById('live-game-btn');
+
 
 preGameBtn.addEventListener('click', function () {
     preGameBtn.classList.add('active');
