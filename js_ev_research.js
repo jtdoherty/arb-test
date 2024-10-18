@@ -46,7 +46,7 @@ function populateTable(bets) {
                     <td>
                         <strong> ${bet.outcome_payout}</strong><br>
                     </td>
-                    <td class="roi">EV: ${bet.EV.toFixed(2)}</td>
+                    <td class="roi">EV: ${bet.EV.toFixed(2)}%</td>
                 </tr>
             `;
             betBody.innerHTML += row; // Append the new row to the table body
