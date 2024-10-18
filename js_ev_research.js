@@ -40,11 +40,11 @@ function populateTable(bets) {
                         <small>${bet.type}</small><br>
                         <small>${bet.source}</small>
                     </td>
-                    <td>
-                        <strong class="centered">${bet.implied_probability.toFixed(2)}%</strong><br>
+                    <td class="centered">
+                        <strong>${bet.implied_probability.toFixed(2)}%</strong><br>
                     </td>
-                    <td>
-                        <strong class="centered">${bet.outcome_payout}</strong><br>
+                    <td class="centered">
+                        <strong>${bet.outcome_payout}</strong><br>
                     </td>
                     <td class="roi centered">EV: ${bet.EV.toFixed(2)}%</td>
                 </tr>
