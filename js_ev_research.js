@@ -30,18 +30,18 @@ function populateTable(bets) {
             const row = `
                 <tr>
                     <td>
-                        ${bet.market_name}<br>
+                        <strong>${bet.market_name}</strong><br>
                         <small>${bet.competition_instance_name}</small><br>
                         <small>${new Date(bet.event_start_time).toLocaleString()}</small><br>
                         <small>${bet.sport}</small>
                     </td>
                     <td>
-                        ${bet.participants[0]}<br>
-                        <strong>Type: ${bet.type}</strong><br>
-                        <small>Source: ${bet.source}</small>
+                        <strong>${bet.participants[0]}</strong><br>
+                        <small>${bet.type}</small><br>
+                        <small>${bet.source}</small>
                     </td>
                     <td>
-                        <strong>Implied Probability: ${bet.implied_probability.toFixed(2)}%</strong><br>
+                        <strong>${bet.implied_probability.toFixed(2)}%</strong><br>
                     </td>
                     <td>
                         <strong> ${bet.outcome_payout}</strong><br>
