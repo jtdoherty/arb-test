@@ -17,17 +17,28 @@ function populateTable(bets) {
     const betBody = document.getElementById('bet-body');
     betBody.innerHTML = ''; // Clear any existing rows
 
-    // Sort bets by ROI (EV) from highest to lowest
-    bets.sort((a, b) => b.EV - a.EV); // Sort by EV
+    // Get the current date and the date 7 days from now
+    const currentDate = new Date();
+    const sevenDaysFromNow = new Date(currentDate);
+    sevenDaysFromNow.setDate(currentDate.getDate() + 7);
+
+    // Filter bets to only include those within the next 7 days
+    const filteredBets = bets.filter(bet => {
+        const eventDate = new Date(bet.event_start_time);
+        return eventDate >= currentDate && eventDate <= sevenDaysFromNow;
+    });
+
+    // Sort filtered bets by ROI (EV) from highest to lowest
+    filteredBets.sort((a, b) => b.EV - a.EV); // Sort by EV
 
     // Check if there are no bets
-    if (bets.length === 0) {
-        betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opportunities found. Check back later!</td></tr>'; // Display message
+    if (filteredBets.length === 0) {
+        betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opportunities found in the next 7 days. Check back later!</td></tr>'; // Display message
         return; // Exit the function early
     }
 
-    // Populate the table with bet data
-    bets.forEach(bet => {
+    // Populate the table with filtered bet data
+    filteredBets.forEach(bet => {
         // Ensure participants and payout exist for the bet
         if (bet.participants.length > 0) {
             const row = `
