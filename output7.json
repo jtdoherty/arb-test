@@ -1100,6 +1100,26 @@
         "competition_instance_name": "2024-25 English Premier League"
     },
     {
+        "key": "aNNp-ykvu-N3Br",
+        "edge": "PLUS_EV_AVERAGE",
+        "lastFoundAt": "2024-10-21T20:36:01.264Z",
+        "type": "MONEYLINE_3WAY",
+        "market_name": "Bayern Munich @ VfL Bochum",
+        "participants": [
+            "VfL Bochum",
+            "Bayern Munich"
+        ],
+        "outcome_payout": 15.0,
+        "source": "BET_PARX",
+        "participant": "VfL Bochum",
+        "sport": "SOCCER",
+        "implied_probability": 7.012983,
+        "profit_potential": 1400.0,
+        "EV": 5.194745,
+        "event_start_time": "2024-10-27T14:30:00.000Z",
+        "competition_instance_name": "2024-25 German Bundesliga"
+    },
+    {
         "key": "brxz-ykvu-vYBa",
         "edge": "PLUS_EV_AVERAGE",
         "lastFoundAt": "2024-10-21T20:36:01.264Z",
@@ -1300,6 +1320,26 @@
         "competition_instance_name": "2024-25 English Premier League"
     },
     {
+        "key": "pNzQ-ykvu-L7cm",
+        "edge": "PLUS_EV_AVERAGE",
+        "lastFoundAt": "2024-10-21T20:36:01.264Z",
+        "type": "MONEYLINE_3WAY",
+        "market_name": "Southampton @ Manchester City",
+        "participants": [
+            "Southampton",
+            "Manchester City"
+        ],
+        "outcome_payout": 12.0,
+        "source": "DRAFT_KINGS",
+        "participant": null,
+        "sport": null,
+        "implied_probability": 8.690979,
+        "profit_potential": 1100.0,
+        "EV": 4.291748,
+        "event_start_time": "2024-10-26T14:00:00.000Z",
+        "competition_instance_name": "2024-25 English Premier League"
+    },
+    {
         "key": "LNuS-ykvu-v7oS",
         "edge": "PLUS_EV_AVERAGE",
         "lastFoundAt": "2024-10-21T20:36:01.264Z",
@@ -1318,6 +1358,26 @@
         "EV": 0.9951746,
         "event_start_time": "2024-11-02T15:00:00.000Z",
         "competition_instance_name": "2024-25 English Premier League"
+    },
+    {
+        "key": "NB0d-ykvu-O3SP",
+        "edge": "PLUS_EV_AVERAGE",
+        "lastFoundAt": "2024-10-21T20:36:01.264Z",
+        "type": "MONEYLINE_3WAY",
+        "market_name": "Bayern Munich @ VfL Bochum",
+        "participants": [
+            "VfL Bochum",
+            "Bayern Munich"
+        ],
+        "outcome_payout": 9.5,
+        "source": "BET_PARX",
+        "participant": null,
+        "sport": null,
+        "implied_probability": 10.71238,
+        "profit_potential": 850.0,
+        "EV": 1.76761,
+        "event_start_time": "2024-10-27T14:30:00.000Z",
+        "competition_instance_name": "2024-25 German Bundesliga"
     },
     {
         "key": "PnVZ-ykvu-mwsh",
@@ -1460,6 +1520,26 @@
         "competition_instance_name": "2024-25 English Premier League"
     },
     {
+        "key": "zpx1-ykvu-V71s",
+        "edge": "PLUS_EV_AVERAGE",
+        "lastFoundAt": "2024-10-21T20:36:01.264Z",
+        "type": "MONEYLINE_3WAY",
+        "market_name": "Bayern Munich @ VfL Bochum",
+        "participants": [
+            "VfL Bochum",
+            "Bayern Munich"
+        ],
+        "outcome_payout": 10.0,
+        "source": "BET_RIVERS",
+        "participant": null,
+        "sport": null,
+        "implied_probability": 10.71238,
+        "profit_potential": 900.0,
+        "EV": 7.1238,
+        "event_start_time": "2024-10-27T14:30:00.000Z",
+        "competition_instance_name": "2024-25 German Bundesliga"
+    },
+    {
         "key": "Y1R2-ykvu-e1nQ",
         "edge": "PLUS_EV_AVERAGE",
         "lastFoundAt": "2024-10-21T20:36:01.264Z",
@@ -1479,5 +1559,24 @@
         "event_start_time": "2024-10-26T14:00:00.000Z",
         "competition_instance_name": "2024-25 English Premier League"
     },
-
+    {
+        "key": "zP33-ykvu-0MwS",
+        "edge": "PLUS_EV_AVERAGE",
+        "lastFoundAt": "2024-10-21T20:36:01.264Z",
+        "type": "MONEYLINE_3WAY",
+        "market_name": "Southampton @ Manchester City",
+        "participants": [
+            "Southampton",
+            "Manchester City"
+        ],
+        "outcome_payout": 26.0,
+        "source": "BET_PARX",
+        "participant": "Southampton",
+        "sport": "SOCCER",
+        "implied_probability": 4.447375,
+        "profit_potential": 2500.0,
+        "EV": 15.63175,
+        "event_start_time": "2024-10-26T14:00:00.000Z",
+        "competition_instance_name": "2024-25 English Premier League"
+    }
 ]
