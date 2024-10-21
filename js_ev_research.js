@@ -69,6 +69,7 @@ function populateTable(bets) {
             const lastFoundAtElement = document.getElementById('lastFoundAt');
             if (lastFoundAtElement) {
                 const lastFoundDate = new Date(bet.last_found_at);
+                console.log("Last Found At Value:", bet.last_found_at); // Log the value for debugging
                 if (!isNaN(lastFoundDate)) { // Check if the date is valid
                     lastFoundAtElement.innerHTML = `<small>Last Found At: ${lastFoundDate.toLocaleString()}</small>`;
                 } else {
