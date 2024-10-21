@@ -17,6 +17,18 @@ function populateTable(bets) {
     const betBody = document.getElementById('bet-body');
     betBody.innerHTML = ''; // Clear any existing rows
 
+    // Update the table header to include "Last Found At"
+    const headerRow = `
+        <tr>
+            <th>EVENT</th>
+            <th>BET 1</th>
+            <th>BET 2</th>
+            <th>ROI</th>
+            <th>Last Found At</th>
+        </tr>
+    `;
+    betBody.innerHTML = headerRow; // Set the header row
+
     // Check if there are no bets
     if (bets.length === 0) {
         betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opportunities found. Check back later!</td></tr>'; // Display message
@@ -32,8 +44,7 @@ function populateTable(bets) {
                     <td>
                         ${bet.event_name}<br>
                         <small>${bet.competition_name}</small><br>
-                        <small>${new Date(bet.start_time).toLocaleString()}</small><br>
-                        <small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>
+                        <small>${new Date(bet.start_time).toLocaleString()}</small>
                     </td>
                     <td>
                         ${bet.outcomes[0].type}<br>
@@ -46,6 +57,7 @@ function populateTable(bets) {
                         <small>${bet.outcomes[1].source}</small>
                     </td>
                     <td class="roi">${calculateROI(bet.outcomes)}</td>
+                    <td>${new Date(bet.last_found_at).toLocaleString()}</td>
                 </tr>
             `;
             betBody.innerHTML += row; // Append the new row to the table body
