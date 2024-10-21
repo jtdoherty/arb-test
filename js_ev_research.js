@@ -66,9 +66,9 @@ function populateTable(bets) {
             betBody.innerHTML += row; // Append the new row to the table body
 
             // Update the Last Found At information
-            const event_start_timeElement = document.getElementById('lastFoundAt');
-            if (event_start_timeElement) {
-                event_start_timeElement.innerHTML = `<small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>`;
+            const lastFoundAtElement = document.getElementById('lastFoundAt');
+            if (lastFoundAtElement) {
+                lastFoundAtElement.innerHTML = `<small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>`; // Update the last found time
             }
         } else {
             console.warn("Missing participants for:", bet.market_name); // Log a warning if data is missing
