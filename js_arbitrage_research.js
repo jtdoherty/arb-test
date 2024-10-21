@@ -65,19 +65,13 @@ function calculateROI(outcomes) {
 
 // Tab switching functionality
 const preGameBtn = document.getElementById('pre-game-btn');
-const liveBtn = document.getElementById('live-game-btn');
 
 preGameBtn.addEventListener('click', function () {
     preGameBtn.classList.add('active');
-    liveBtn.classList.remove('active');
     loadPreGameData(); // Load pre-game data if applicable
 });
 
-liveBtn.addEventListener('click', function () {
-    liveBtn.classList.add('active');
-    preGameBtn.classList.remove('active');
-    loadLiveData(); // Load live data if applicable
-});
+
 
 // Function to load pre-game data
 async function loadPreGameData() {
@@ -89,19 +83,9 @@ async function loadPreGameData() {
     }
 }
 
-// Function to load live data (if applicable, placeholder for future implementation)
-async function loadLiveData() {
-    try {
-        const bets = await fetchArbitrageData(); // Fetch the data
-        populateTable(bets); // Populate the table with fetched data
-    } catch (error) {
-        console.error("Could not load arbitrage data:", error);
-    }
-}
 
 // DOMContentLoaded to initialize page
 document.addEventListener('DOMContentLoaded', async function () {
     preGameBtn.classList.add('active'); // Set Pre-Game as active on page load
-    liveBtn.classList.remove('active'); // Ensure Live Game is not active
     loadPreGameData(); // Load pre-game data initially
 });
