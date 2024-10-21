@@ -17,18 +17,6 @@ function populateTable(bets) {
     const betBody = document.getElementById('bet-body');
     betBody.innerHTML = ''; // Clear any existing rows
 
-    // Update the table header to include "Last Found At"
-    const headerRow = `
-        <tr>
-            <th>EVENT</th>
-            <th>BET 1</th>
-            <th>BET 2</th>
-            <th>ROI</th>
-            <th>Last Found At</th>
-        </tr>
-    `;
-    betBody.innerHTML = headerRow; // Set the header row
-
     // Check if there are no bets
     if (bets.length === 0) {
         betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opportunities found. Check back later!</td></tr>'; // Display message
@@ -57,10 +45,15 @@ function populateTable(bets) {
                         <small>${bet.outcomes[1].source}</small>
                     </td>
                     <td class="roi">${calculateROI(bet.outcomes)}</td>
-                    <td>${new Date(bet.last_found_at).toLocaleString()}</td>
                 </tr>
             `;
             betBody.innerHTML += row; // Append the new row to the table body
+
+            // Update the Last Found At information
+            const lastFoundAtElement = document.getElementById('lastFoundAt');
+            if (lastFoundAtElement) {
+                lastFoundAtElement.innerHTML = `<small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>`;
+            }
         } else {
             console.warn("Not enough outcomes for:", bet.event_name); // Log a warning if data is missing
         }
