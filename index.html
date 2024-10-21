@@ -1,91 +1,98 @@
-// Function to fetch data from the specific JSON file
-async function fetchArbitrageData() {
-    try {
-        const response = await fetch('filtered_arbitrage_data.json'); // Ensure this path is correct
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return await response.json();
-    } catch (error) {
-        console.error("Error loading arbitrage data:", error);
-        return []; // Return an empty array in case of error
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbitrage Bet Finder Tool</title>
+  <link rel="stylesheet" href="css_arbitrage_research.css">
+</head>
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="logo">JTD</a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <img id="menu-icon" src="menu-icon.png" alt="Menu">
+        </button>
+      </div>
+      <div class="navbar-links" id="navbar-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="html_arbitrage_research.html" class="nav-link">Arbitrage</a>
+        <a href="html_ev_research.html" class="nav-link">+EV</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-// Function to populate the table with fetched data
-function populateTable(bets) {
-    const betBody = document.getElementById('bet-body');
-    betBody.innerHTML = ''; // Clear any existing rows
+  <!-- Main Content Section -->
+  <div class="container">
+    <h1 class="title">Arbitrage Bet Finder Tool</h1>
+    <p class="description">
+      We continuously monitor odds from online sportsbooks to identify arbitrage betting opportunities, covering both pre-game and live bets.
+    </p>
 
-    // Check if there are no bets
-    if (bets.length === 0) {
-        betBody.innerHTML = '<tr><td colspan="4" class="no-data">No Arbitrage opportunities found. Check back later!</td></tr>'; // Display message
-        return; // Exit the function early
-    }
+    <div class="controls">
+      <div class="buttons">
+        <button id="pre-game-btn" class="active">Pre-Game</button>
+      </div>
+      <div class="dropdowns">
+        <select id="league-select">
+          <option value="All">All</option>
+          <option value="NFL">NFL</option>
+          <option value="NBA">NBA</option>
+          <option value="MLB">MLB</option>
+          <option value="NHL">NHL</option>
+        </select>
+      </div>
+    </div>
 
-    // Populate the table with bet data
-    bets.forEach(bet => {
-        // Ensure outcomes have at least two bets to show
-        if (bet.outcomes.length >= 2) {
-            const row = `
-                <tr>
-                    <td>
-                        ${bet.event_name}<br>
-                        <small>${bet.competition_name}</small><br>
-                        <small>${new Date(bet.start_time).toLocaleString()}</small><br>
-                        <small>Last Found At: ${new Date(bet.last_found_at).toLocaleString()}</small>
-                    </td>
-                    <td>
-                        ${bet.outcomes[0].type}<br>
-                        <strong>${bet.outcomes[0].payout}</strong><br>
-                        <small>${bet.outcomes[0].source}</small>
-                    </td>
-                    <td>
-                        ${bet.outcomes[1].type}<br>
-                        <strong>${bet.outcomes[1].payout}</strong><br>
-                        <small>${bet.outcomes[1].source}</small>
-                    </td>
-                    <td class="roi">${calculateROI(bet.outcomes)}</td>
-                </tr>
-            `;
-            betBody.innerHTML += row; // Append the new row to the table body
-        } else {
-            console.warn("Not enough outcomes for:", bet.event_name); // Log a warning if data is missing
-        }
-    });
-}
+    <table class="bet-table">
+      <thead>
+        <tr>
+          <th>EVENT</th>
+          <th>BET 1</th>
+          <th>BET 2</th>
+          <th>ROI</th>
+        </tr>
+      </thead>
+      <tbody id="bet-body">
+        <!-- Bets will be inserted here by JavaScript -->
+      </tbody>
+    </table>
 
-// Sample ROI calculation function
-function calculateROI(outcomes) {
-    // Assuming simple ROI calculation based on payouts
-    const payout1 = outcomes[0].payout;
-    const payout2 = outcomes[1].payout;
-    return ((1 / payout1 + 1 / payout2) * 100 - 100).toFixed(2) + '%';
-}
+    <div class="info">
+      <h2>How Our Arbitrage Bet Finder Tool Works</h2>
+      <p>
+        Our tool monitors sportsbooks for arbitrage betting opportunities by checking odds. An arbitrage bet occurs when the combined odds of both sides of a bet result in a positive number, ensuring a guaranteed profit by betting on both sides.
+      </p>
+      <p>
+        To use the tool, check the table showing available arb bets. You’ll find:
+      </p>
+      <ul>
+        <li><strong>Event:</strong> Game, league, date, and time.</li>
+        <li><strong>Bet 1 and Bet 2:</strong> The sportsbook, line, and odds for each side.</li>
+        <li><strong>ROI:</strong> The percentage return on your investment.</li>
+      </ul>
 
-// Tab switching functionality
-const preGameBtn = document.getElementById('pre-game-btn');
+      <h2>How Arbitrage Betting Works</h2>
+      <p>
+        Arbitrage betting involves placing bets on both sides of a game at different sportsbooks when there are price discrepancies, ensuring a profit regardless of the outcome. Though profits can be small and opportunities hard to find, using arbitrage betting software simplifies the process.
+      </p>
 
-preGameBtn.addEventListener('click', function () {
-    preGameBtn.classList.add('active');
-    loadPreGameData(); // Load pre-game data if applicable
-});
+      <h2>Examples of Arbitrage Betting</h2>
+      <p>
+        For instance, if DraftKings offers the Yankees at +110 and the Red Sox at -105, and FanDuel offers the reverse odds, betting $100 on each side guarantees a profit. By betting on both the Yankees and Red Sox at opposite sportsbooks, you lock in a return regardless of the outcome.
+      </p>
 
+      <h2>How to Find Arbitrage Opportunities</h2>
+      <p>
+        Identifying favorable pricing requires constant monitoring of multiple sportsbooks. Comparing odds, watching line movements, and taking advantage of promotions or free bets can also reveal arbitrage opportunities.
+      </p>
+    </div>
+  </div>
 
-
-// Function to load pre-game data
-async function loadPreGameData() {
-    try {
-        const bets = await fetchArbitrageData(); // Fetch the data
-        populateTable(bets); // Populate the table with fetched data
-    } catch (error) {
-        console.error("Could not load arbitrage data:", error);
-    }
-}
-
-
-// DOMContentLoaded to initialize page
-document.addEventListener('DOMContentLoaded', async function () {
-    preGameBtn.classList.add('active'); // Set Pre-Game as active on page load
-    loadPreGameData(); // Load pre-game data initially
-});
+  <!-- Scripts -->
+  <script src="js_arbitrage_research.js"></script>
+</body>
+</html>
