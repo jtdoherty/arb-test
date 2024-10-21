@@ -32,7 +32,7 @@ function populateTable(bets) {
                     <td>
                         ${bet.event_name}<br>
                         <small>${bet.competition_name}</small><br>
-                        <small>${new Date(bet.start_time).toLocaleString('en-US', { weekday: 'long', hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York', month: 'short', day: 'numeric' )}</small>
+                        <small>${new Date(bet.start_time).toLocaleString()}</small>
                     </td>
                     <td>
                         ${bet.outcomes[0].type}<br>
