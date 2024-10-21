@@ -1220,26 +1220,6 @@
         "competition_instance_name": "2024 NCAA Division I Football"
     },
     {
-        "key": "Icti-ykvu-3qdd",
-        "edge": "PLUS_EV_AVERAGE",
-        "lastFoundAt": "2024-10-21T20:36:01.264Z",
-        "type": "MONEYLINE_3WAY",
-        "market_name": "Southampton @ Manchester City",
-        "participants": [
-            "Southampton",
-            "Manchester City"
-        ],
-        "outcome_payout": 29.0,
-        "source": "BET_RIVERS",
-        "participant": "Southampton",
-        "sport": "SOCCER",
-        "implied_probability": 4.447375,
-        "profit_potential": 2800.0,
-        "EV": 28.973875,
-        "event_start_time": "2024-10-26T14:00:00.000Z",
-        "competition_instance_name": "2024-25 English Premier League"
-    },
-    {
         "key": "k4Ah-ykvu-rwpU",
         "edge": "PLUS_EV_AVERAGE",
         "lastFoundAt": "2024-10-21T20:36:01.264Z",
